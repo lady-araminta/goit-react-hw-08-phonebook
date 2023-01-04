@@ -2,8 +2,8 @@ import { Input, InputGroup, InputLeftElement, Stack } from '@chakra-ui/react';
 import { nanoid } from 'nanoid';
 import { AiOutlineFilter } from 'react-icons/ai';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectFilter } from 'redux/selectors';
-import { setFilter } from 'redux/filterSlice';
+import { selectFilter } from 'redux/contacts/selectors';
+import { setFilter } from 'redux/contacts/filterSlice';
 
 export const Filter = () => {
   const filterId = nanoid();

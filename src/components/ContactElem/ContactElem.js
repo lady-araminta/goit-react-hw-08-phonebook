@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { Button, Td, Tr } from '@chakra-ui/react';
 import { useDispatch } from 'react-redux';
-import { deleteContact } from 'redux/operations';
+import { deleteContact } from 'redux/contacts/operations';
 
 export const ContactElem = ({ id, name, number }) => {
   const dispatch = useDispatch();

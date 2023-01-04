@@ -9,8 +9,7 @@ import {
   InputGroup,
   InputLeftAddon,
 } from '@chakra-ui/react';
-import { AiOutlineUser } from 'react-icons/ai';
-import { MdPassword } from 'react-icons/md';
+import { MdPassword, MdOutlineAlternateEmail } from 'react-icons/md';
 
 export const Login = () => {
   return (
@@ -21,8 +20,11 @@ export const Login = () => {
       <CardBody>
         <InputGroup as="form" flexDirection="column">
           <Flex mb="8px">
-            <InputLeftAddon pointerEvents="none" children={<AiOutlineUser />} />
-            <Input placeholder="Enter your name" />
+            <InputLeftAddon
+              pointerEvents="none"
+              children={<MdOutlineAlternateEmail />}
+            />
+            <Input placeholder="Enter your e-mail" />
           </Flex>
           <Flex mb="16px">
             <InputLeftAddon pointerEvents="none" children={<MdPassword />} />
