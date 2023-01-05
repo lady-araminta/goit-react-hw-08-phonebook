@@ -6,8 +6,17 @@ import { RegisterForm } from 'pages/Register/Register';
 import { NotFound } from 'pages/NotFound/NotFound';
 import { Route, Routes } from 'react-router-dom';
 import { AppBar } from './AppBar/AppBar';
+import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+import { userRefresh } from 'redux/auth/operations';
 
 export const App = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(userRefresh());
+  }, [dispatch]);
+
   return (
     <Box maxW="1200px" mr="auto" ml="auto">
       <AppBar />

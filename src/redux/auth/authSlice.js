@@ -1,4 +1,4 @@
-import { login, register, logout } from './operations';
+import { login, register, logout, userRefresh } from './operations';
 import { createSlice } from '@reduxjs/toolkit';
 
 const handleRejected = (state, action) => {
@@ -17,6 +17,7 @@ const authSlice = createSlice({
     [register.rejected]: handleRejected,
     [login.rejected]: handleRejected,
     [logout.rejected]: handleRejected,
+    [userRefresh.rejected]: handleRejected,
     [register.fulfilled](state, action) {
       state.user = action.payload.user;
       state.token = action.payload.token;
@@ -34,6 +35,11 @@ const authSlice = createSlice({
       state.token = null;
       state.isLoggedIn = false;
       state.error = null;
+    },
+    [userRefresh.fulfilled](state, action) {
+      // state.user = { ...action.payload };
+      state.user = action.payload;
+      state.isLoggedIn = true;
     },
   },
 });
