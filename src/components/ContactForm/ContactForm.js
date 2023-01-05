@@ -5,11 +5,11 @@ import {
   Stack,
   Button,
   Card,
-  CardHeader,
   CardBody,
-  Heading,
   Flex,
   useToast,
+  CardHeader,
+  Heading,
 } from '@chakra-ui/react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
@@ -81,10 +81,12 @@ export const ContactForm = () => {
   };
   return (
     <Card maxW="sm" ml="auto" mr="auto" mt="48px" mb="48px">
-      <CardHeader>
-        <Heading textAlign="center">Phonebook</Heading>
-      </CardHeader>
       <CardBody>
+        <CardHeader>
+          <Heading size="md" textAlign="center">
+            Add contact
+          </Heading>
+        </CardHeader>
         <Stack>
           <InputGroup as="form" onSubmit={handleSubmit} flexDirection="column">
             <Flex mb="8px">
@@ -117,8 +119,7 @@ export const ContactForm = () => {
               ml="auto"
               mr="auto"
               type="submit"
-              children="Add contact"
-              width={120}
+              children="Save to phonebook"
             />
           </InputGroup>
         </Stack>

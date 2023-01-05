@@ -1,21 +1,14 @@
-import { Flex, Box, Spacer, Divider } from '@chakra-ui/react';
-import { Link } from 'react-router-dom';
+import { Divider } from '@chakra-ui/react';
+import { Navigation } from 'components/Navigation/Navigation';
+import { UserMenu } from 'components/UserMenu/UserMenu';
+import { useSelector } from 'react-redux';
+import { selectIsLoggedIn } from 'redux/auth/selectors';
 
 export const AppBar = () => {
+  const isLoggedIn = useSelector(selectIsLoggedIn);
   return (
     <>
-      <Flex>
-        <Box p="4">
-          <Link to="/">Home</Link>
-        </Box>
-        <Spacer />
-        <Box p="4">
-          <Link to="/register">Sign up</Link>
-        </Box>
-        <Box p="4">
-          <Link to="/login">Log in</Link>
-        </Box>
-      </Flex>
+      {isLoggedIn ? <UserMenu /> : <Navigation />}
       <Divider />
     </>
   );

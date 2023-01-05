@@ -10,7 +10,7 @@ export const Filter = () => {
   const filter = useSelector(selectFilter);
   const dispatch = useDispatch();
   return (
-    <Stack maxW="sm" ml="auto" mr="auto" mb="16px">
+    <Stack maxW="sm" ml="auto" mr="auto" mt="32px" mb="16px">
       <InputGroup>
         <InputLeftElement pointerEvents="none" children={<AiOutlineFilter />} />
         <Input

@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import { Button, Td, Tr } from '@chakra-ui/react';
 import { useDispatch } from 'react-redux';
 import { deleteContact } from 'redux/contacts/operations';
+import { AiOutlineUserDelete, AiOutlineEdit } from 'react-icons/ai';
 
 export const ContactElem = ({ id, name, number }) => {
   const dispatch = useDispatch();
@@ -11,7 +12,14 @@ export const ContactElem = ({ id, name, number }) => {
       <Td>{name}</Td>
       <Td>{number}</Td>
       <Td>
-        <Button type="button" children="Delete" onClick={handleDelete} />
+        <Button type="button" children={<AiOutlineEdit />} />
+      </Td>
+      <Td>
+        <Button
+          type="button"
+          children={<AiOutlineUserDelete />}
+          onClick={handleDelete}
+        />
       </Td>
     </Tr>
   );
