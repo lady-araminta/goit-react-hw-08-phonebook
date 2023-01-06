@@ -16,6 +16,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { selectUserName } from 'redux/auth/selectors';
 import { logout } from 'redux/auth/operations';
 import { Link } from 'react-router-dom';
+import { ThemeToggler } from 'components/ThemeToggler/ThemeToggler';
 
 export const UserMenu = () => {
   const user = useSelector(selectUserName);
@@ -27,6 +28,9 @@ export const UserMenu = () => {
       </Box>
       <Box p="4">
         <Link to="/contacts">Contacts</Link>
+      </Box>
+      <Box p="4">
+        <ThemeToggler />
       </Box>
       <Spacer />
       <Stack
