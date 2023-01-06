@@ -14,7 +14,7 @@ import { useDispatch } from 'react-redux';
 import { MdPassword, MdOutlineAlternateEmail } from 'react-icons/md';
 import { login } from 'redux/auth/operations';
 
-export const LoginForm = () => {
+export default function LoginForm() {
   const dispatch = useDispatch();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -77,4 +77,4 @@ export const LoginForm = () => {
       </CardBody>
     </Card>
   );
-};
+}

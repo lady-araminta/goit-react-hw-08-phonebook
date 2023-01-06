@@ -13,7 +13,7 @@ import {
   selectIsLoading,
 } from 'redux/contacts/selectors';
 
-export const Contacts = () => {
+export default function Contacts() {
   const contacts = useSelector(selectContacts);
   const isLoading = useSelector(selectIsLoading);
   const error = useSelector(selectError);
@@ -41,4 +41,4 @@ export const Contacts = () => {
       {contacts.length > 0 && <ContactList />}
     </Box>
   );
-};
+}

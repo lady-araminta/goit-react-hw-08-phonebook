@@ -1,1 +1,1 @@
-export const NotFound = () => {};
+export default function NotFound() {}

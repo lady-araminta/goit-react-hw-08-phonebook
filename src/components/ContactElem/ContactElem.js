@@ -2,7 +2,8 @@ import PropTypes from 'prop-types';
 import { Button, Td, Tr } from '@chakra-ui/react';
 import { useDispatch } from 'react-redux';
 import { deleteContact } from 'redux/contacts/operations';
-import { AiOutlineUserDelete, AiOutlineEdit } from 'react-icons/ai';
+import { AiOutlineUserDelete } from 'react-icons/ai';
+import { ModalEditContact } from 'components/Modal/modal';
 
 export const ContactElem = ({ id, name, number }) => {
   const dispatch = useDispatch();
@@ -12,7 +13,7 @@ export const ContactElem = ({ id, name, number }) => {
       <Td>{name}</Td>
       <Td>{number}</Td>
       <Td>
-        <Button type="button" children={<AiOutlineEdit />} />
+        <ModalEditContact id={id} name={name} number={number} />
       </Td>
       <Td>
         <Button

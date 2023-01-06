@@ -15,7 +15,7 @@ import { MdPassword, MdOutlineAlternateEmail } from 'react-icons/md';
 import { useDispatch } from 'react-redux';
 import { register } from 'redux/auth/operations';
 
-export const RegisterForm = () => {
+export default function RegisterForm() {
   const dispatch = useDispatch();
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -93,4 +93,4 @@ export const RegisterForm = () => {
       </CardBody>
     </Card>
   );
-};
+}

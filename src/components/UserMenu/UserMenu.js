@@ -23,6 +23,9 @@ export const UserMenu = () => {
   return (
     <Flex alignItems="center" h="64px" fontWeight="700">
       <Box p="4">
+        <Link to="/">Home</Link>
+      </Box>
+      <Box p="4">
         <Link to="/contacts">Contacts</Link>
       </Box>
       <Spacer />
@@ -31,7 +34,7 @@ export const UserMenu = () => {
         justifyContent="space-between"
         alignItems="center"
       >
-        <Avatar size="sm" name={user} />
+        <Avatar size="sm" />
         <Popover>
           <PopoverTrigger>
             <Box p="4">Welcome, {user}!</Box>
